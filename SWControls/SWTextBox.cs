@@ -7,7 +7,7 @@ using System.Drawing; //5
 using System.Windows.Forms;  //1-add
 using System.Text.RegularExpressions;
 
-namespace Sprint2_customControl
+namespace SC_CustomControls
 {
     
     public class SWTextbox : TextBox  //2-inherit 

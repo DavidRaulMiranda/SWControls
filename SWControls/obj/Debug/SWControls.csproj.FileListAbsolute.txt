@@ -1,0 +1,6 @@
+C:\Users\pirio\source\repos\SWControls\SWControls\bin\Debug\SWControls.dll
+C:\Users\pirio\source\repos\SWControls\SWControls\bin\Debug\SWControls.pdb
+C:\Users\pirio\source\repos\SWControls\SWControls\obj\Debug\SWControls.csprojAssemblyReference.cache
+C:\Users\pirio\source\repos\SWControls\SWControls\obj\Debug\SWControls.csproj.CoreCompileInputs.cache
+C:\Users\pirio\source\repos\SWControls\SWControls\obj\Debug\SWControls.dll
+C:\Users\pirio\source\repos\SWControls\SWControls\obj\Debug\SWControls.pdb

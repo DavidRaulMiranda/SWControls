@@ -29,7 +29,7 @@ namespace TestAppLauncher
         /// </summary>
         private void InitializeComponent()
         {
-            this.appLauncher1 = new Sprint2_customControl.AppLauncher();
+            this.appLauncher1 = new SC_CustomControls.AppLauncher();
             this.SuspendLayout();
             // 
             // appLauncher1
@@ -57,7 +57,7 @@ namespace TestAppLauncher
 
         #endregion
 
-        private Sprint2_customControl.AppLauncher appLauncher1;
+        private SC_CustomControls.AppLauncher appLauncher1;
     }
 }
 

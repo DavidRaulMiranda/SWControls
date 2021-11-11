@@ -60,15 +60,19 @@ namespace SC_CustomControls
         /// <param name="NomApp"></param>
         private void RequestFromServer(string NomApp)
         {
+           
+           
             /*
-           SQL a = new SQL();
             SC_SQL.SQL a = new SC_SQL.SQL();
             */
             //sql.Connectar();
 
             // DataSet data= sql.PortarPerConsulta("select * from dbo.users");
             ///
+            SqlConnForm.SQL a = new SqlConnForm.SQL();
 
+            string query = "INSERT INTO AGENCIES VALUES ('a','a')";
+            a.Executar(query);
 
 
             StartApp("HelloWorldForm", "Form1");

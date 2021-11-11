@@ -31,9 +31,22 @@ namespace SC_CustomControls
         
         private void textBox1_Validating(object sender, CancelEventArgs e)
         {
-            if (_Requerit == true && this.txtIntro.Equals(string.Empty))
+
+            if (this.txtIntro.Equals(string.Empty))
             {
-                e.Cancel = true;
+                if(_Requerit == true)
+                {
+                    incorrecData(e);
+                }
+                else
+                {
+                    txtIntro.BackColor = Color.White;
+                }
+
+            }
+            else
+            {
+                ConsultaBBDDD();
             }
 
 
@@ -42,7 +55,7 @@ namespace SC_CustomControls
         }
         private void txtIntro_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            ConsultaBBDDD();
         }
         private void ConsultaBBDDD()
         {
@@ -50,9 +63,11 @@ namespace SC_CustomControls
         }
         private void incorrecData(CancelEventArgs e)
         {
+            txtIntro.BackColor = Color.Red;
             txtIntro.Text = "";
             e.Cancel = true;
         }
+        
         /// <summary>
         ///  Control property
         /// </summary>

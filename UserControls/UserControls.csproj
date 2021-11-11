@@ -68,11 +68,5 @@
       <DependentUpon>SWCodi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OneDrive\Documentos\S2AM\guti\Sprint_Individual\2_Cusom_controls\Sprint2_customControl\SWUserControl.csproj">
-      <Project>{79A14C82-1286-4CEF-8B2A-AC89CE01AB4D}</Project>
-      <Name>SWUserControl</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

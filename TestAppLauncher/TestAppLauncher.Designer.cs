@@ -38,10 +38,11 @@ namespace TestAppLauncher
             this.appLauncher1.Description = null;
             this.appLauncher1.Location = new System.Drawing.Point(252, 87);
             this.appLauncher1.Name = "appLauncher1";
-            this.appLauncher1.NomApp = null;
+            this.appLauncher1.NomApp = "test";
             this.appLauncher1.Size = new System.Drawing.Size(246, 95);
             this.appLauncher1.TabIndex = 0;
             this.appLauncher1.title = null;
+            this.appLauncher1.Load += new System.EventHandler(this.appLauncher1_Load);
             // 
             // TestAppLauncher
             // 

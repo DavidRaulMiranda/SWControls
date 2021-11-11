@@ -16,5 +16,10 @@ namespace TestAppLauncher
         {
             InitializeComponent();
         }
+
+        private void appLauncher1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

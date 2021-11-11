@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgenciesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgenciesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TestAppLauncher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +71,17 @@
     <EmbeddedResource Include="TestAppLauncher.resx">
       <DependentUpon>TestAppLauncher.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AgenciesDataSet.xsc">
+      <DependentUpon>AgenciesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AgenciesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AgenciesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AgenciesDataSet.xss">
+      <DependentUpon>AgenciesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

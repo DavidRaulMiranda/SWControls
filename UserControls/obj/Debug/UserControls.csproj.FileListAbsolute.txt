@@ -1,0 +1,13 @@
+C:\Users\pirio\source\repos\SWControls\UserControls\bin\Debug\UserControls.dll
+C:\Users\pirio\source\repos\SWControls\UserControls\bin\Debug\UserControls.pdb
+C:\Users\pirio\source\repos\SWControls\UserControls\bin\Debug\SC_SQL.dll
+C:\Users\pirio\source\repos\SWControls\UserControls\bin\Debug\Sprint2_customControl.dll
+C:\Users\pirio\source\repos\SWControls\UserControls\bin\Debug\Sprint2_customControl.pdb
+C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\UserControls.csprojAssemblyReference.cache
+C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\SC_CustomControls.AppLauncher.resources
+C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\SC_CustomControls.SWCodi.resources
+C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\UserControls.csproj.GenerateResource.cache
+C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\UserControls.csproj.CoreCompileInputs.cache
+C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\UserControls.csproj.CopyComplete
+C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\UserControls.dll
+C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\UserControls.pdb

@@ -1,8 +1,6 @@
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\TestAppLauncher.exe.config
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\TestAppLauncher.exe
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\TestAppLauncher.pdb
-C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\Sprint2_customControl.dll
-C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\Sprint2_customControl.pdb
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher.csprojAssemblyReference.cache
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher.Properties.Resources.resources
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher.TestAppLauncher.resources
@@ -11,3 +9,5 @@ C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher.csproj.CopyComplete
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher.exe
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher.pdb
+C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\UserControls.dll
+C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\UserControls.pdb

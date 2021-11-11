@@ -36,9 +36,9 @@ namespace TestAppLauncher
             // 
             this.appLauncher1.BackColor = System.Drawing.Color.DimGray;
             this.appLauncher1.Description = null;
-            this.appLauncher1.Location = new System.Drawing.Point(405, 93);
+            this.appLauncher1.Location = new System.Drawing.Point(252, 87);
             this.appLauncher1.Name = "appLauncher1";
-            this.appLauncher1.NomApp = "alias";
+            this.appLauncher1.NomApp = null;
             this.appLauncher1.Size = new System.Drawing.Size(246, 95);
             this.appLauncher1.TabIndex = 0;
             this.appLauncher1.title = null;
@@ -55,9 +55,11 @@ namespace TestAppLauncher
 
         }
 
+        private SC_CustomControls.AppLauncher appLauncher1;
+
         #endregion
 
-        private SC_CustomControls.AppLauncher appLauncher1;
+        //private SC_CustomControls.AppLauncher appLauncher1;
     }
 }
 

@@ -96,9 +96,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OneDrive\Documentos\S2AM\guti\Sprint_Individual\2_Cusom_controls\Sprint2_customControl\SWUserControl.csproj">
-      <Project>{79a14c82-1286-4cef-8b2a-ac89ce01ab4d}</Project>
-      <Name>SWUserControl</Name>
+    <ProjectReference Include="..\UserControls\UserControls.csproj">
+      <Project>{1ba301df-4cac-498a-a4e0-4a9039a68c83}</Project>
+      <Name>UserControls</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

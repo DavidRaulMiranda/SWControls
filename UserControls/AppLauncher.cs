@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
-using SC_SQL;
+using connSql;
 
 
 namespace SC_CustomControls
@@ -60,22 +60,39 @@ namespace SC_CustomControls
         /// <param name="NomApp"></param>
         private void RequestFromServer(string NomApp)
         {
-           
-           
-            /*
-            SC_SQL.SQL a = new SC_SQL.SQL();
-            */
+            string appClass;
+            string appForm;
+
+            connSql.SQLConnect sql = new connSql.SQLConnect();
+
             //sql.Connectar();
 
-            // DataSet data= sql.PortarPerConsulta("select * from dbo.users");
-            ///
-            SqlConnForm.SQL a = new SqlConnForm.SQL();
+            //sql.PortarTaule() importa 1 taula
+            DataSet dts = new DataSet();
+            string f = String.Format("select  class,form from UserOptions where  UserOptions.Alias='{0}';", _NomApp);
+            //dts =sql.PortarPerConsulta(String.Format("select  class,form from UserOptions where  UserOptions.Alias='{0}';", _NomApp));
+           // dts = sql.PortarPerConsulta("select * from UserOptions");
+            dts = sql.PortarPerConsulta("select  class,form from UserOptions where Alias='test1'");
+            ///*
+            // string query = "INSERT INTO AGENCIES VALUES ('a','a')";
+            // sql.Executar(query);
 
-            string query = "INSERT INTO AGENCIES VALUES ('a','a')";
-            a.Executar(query);
+
+            if ( dts.Tables[0].Rows.Count==1)
+            {
+                appClass = dts.Tables[0].Rows[0]["class"].ToString();
+                appForm = dts.Tables[0].Rows[0]["form"].ToString();
+                if (!String.IsNullOrEmpty(appClass) && !String.IsNullOrEmpty(appForm))
+                {
+                    StartApp(appClass, appForm);
+                }
 
 
-            StartApp("HelloWorldForm", "Form1");
+
+            }
+           
+
+            
 
         }
         /// <summary>

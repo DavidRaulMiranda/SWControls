@@ -70,9 +70,10 @@ namespace SC_CustomControls
             //sql.PortarTaule() importa 1 taula
             DataSet dts = new DataSet();
             string f = String.Format("select  class,form from UserOptions where  UserOptions.Alias='{0}';", _NomApp);
-            //dts =sql.PortarPerConsulta(String.Format("select  class,form from UserOptions where  UserOptions.Alias='{0}';", _NomApp));
-           // dts = sql.PortarPerConsulta("select * from UserOptions");
-            dts = sql.PortarPerConsulta("select  class,form from UserOptions where Alias='test1'");
+           // dts =sql.PortarPerConsulta(String.Format("select  class,form from UserOptions where  UserOptions.Alias='{0}';", _NomApp));
+            // dts = sql.PortarPerConsulta("select * from UserOptions");
+            //dts = sql.PortarPerConsulta("select  class,form from UserOptions whewe");
+            dts = sql.PortarPerConsulta("select  class,form from UserOptions where  UserOptions.Alias='test1'");
             ///*
             // string query = "INSERT INTO AGENCIES VALUES ('a','a')";
             // sql.Executar(query);

@@ -22,8 +22,11 @@ namespace SC_CustomControls
         {
      
             
-            InitializeComponent(); 
-            
+            InitializeComponent();
+            this.Height = this.Width / 3;
+            pictureBox1.Width = this.Width / 2;
+            pictureBox1.Height = this.Height - 4;
+
 
         }
         
@@ -35,67 +38,20 @@ namespace SC_CustomControls
         /// <param name="e"></param>
         private void AppLauncher_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Goldenrod;
+
+            ///if app not open then launch
+
+
+            //this.BackColor = Color.Goldenrod;
             //debe ser un dll => que sea biblio de calses
-            if(!string.IsNullOrEmpty(_NomApp))
-            {
-                RequestFromServer(_NomApp);
 
-                
+                StartApp(_Clase, _Form);
+            
 
-
-            }
-            else
-            {
-                this.BackColor = Color.DimGray;
-            }
  
         }
         
-       
 
-        /// <summary>
-        /// reguest sql??
-        /// </summary>
-        /// <param name="NomApp"></param>
-        private void RequestFromServer(string NomApp)
-        {
-            string appClass;
-            string appForm;
-
-            connSql.SQLConnect sql = new connSql.SQLConnect();
-
-            //sql.Connectar();
-
-            //sql.PortarTaule() importa 1 taula
-            DataSet dts = new DataSet();
-            string f = String.Format("select  class,form from UserOptions where  UserOptions.Alias='{0}';", _NomApp);
-           // dts =sql.PortarPerConsulta(String.Format("select  class,form from UserOptions where  UserOptions.Alias='{0}';", _NomApp));
-            // dts = sql.PortarPerConsulta("select * from UserOptions");
-            //dts = sql.PortarPerConsulta("select  class,form from UserOptions whewe");
-            dts = sql.PortarPerConsulta("select  class,form from UserOptions where  UserOptions.Alias='test1'");
-            ///*
-            // string query = "INSERT INTO AGENCIES VALUES ('a','a')";
-            // sql.Executar(query);
-
-
-            if ( dts.Tables[0].Rows.Count==1)
-            {
-                appClass = dts.Tables[0].Rows[0]["class"].ToString();
-                appForm = dts.Tables[0].Rows[0]["form"].ToString();
-                if (!String.IsNullOrEmpty(appClass) && !String.IsNullOrEmpty(appForm))
-                {
-                    StartApp(appClass, appForm);
-                }
-
-
-
-            }
-           
-
-            
-
-        }
         /// <summary>
         ///  this function is tirggered  if the response from sql is valid and tries to open the form
         /// </summary>
@@ -112,16 +68,23 @@ namespace SC_CustomControls
             tipus = ensamblat.GetType(appClass + "." + appForm);
 
             dllBD = Activator.CreateInstance(tipus);
-
+            //frmchild.MDIParent=this;
             ((Form)dllBD).Show();
         }
 
-        private string _NomApp;
+        private string _Form;
 
-        public string NomApp
+        public string Form
         {
-            get { return _NomApp; }
-            set { _NomApp = value; }
+            get { return _Form; }
+            set { _Form = value; }
+        }
+
+        private string _Clase;
+        public string Clase
+        {
+            get { return _Clase; }
+            set { _Clase = value; }
         }
 
         private string _Description;
@@ -129,7 +92,15 @@ namespace SC_CustomControls
         {
             get { return _Description; }
             set { _Description = value;
-                lblDesc.Text = _Description;
+                
+                if (string.IsNullOrEmpty(_Description))
+                {
+                    lblDesc.Text = "[...]";
+                }
+                else
+                {
+                    lblDesc.Text = _Description;
+                }
             }
         }
         private string _Title;
@@ -138,8 +109,82 @@ namespace SC_CustomControls
         {
             get { return _Title; }
             set { _Title = value;
-               lblTitle.Text = _Title;
+               
+                if (string.IsNullOrEmpty(_Title))
+                {
+                    lblTitle.Text = "-NO TITLE-";
+                }
+                else
+                {
+                    lblTitle.Text = _Title;
+                }
             }
         }
+
+        private string _ImagePath;
+        public string ImagePath
+        {
+            get { return _ImagePath; }
+            set
+            {
+                _ImagePath = value;
+                pictureBox1.ImageLocation = _ImagePath;
+            }
+        }
+        private  Color _ButtonColor;
+         
+        public Color ButtonColor
+        {
+            get { return _ButtonColor; }
+            set
+            {
+                _ButtonColor = value;
+                if (_ButtonColor.IsEmpty)
+                {
+                    this.BackColor = Color.Yellow;
+                }
+                else
+                {
+                    this.BackColor = _ButtonColor;
+                }
+
+            }
+        }
+
+        private void AppLauncher_SizeChanged(object sender, EventArgs e)
+        {
+
+            lblDesc.Text = this.Width.ToString();
+            if (this.Width > 100)
+            {
+                this.Height = this.Width / 3;
+                pictureBox1.Width = this.Width / 2;
+                pictureBox1.Height = this.Height - 4;
+            }
+
+            
+        }
+        
+
+        ///ADDONS:
+        //parent to launch
+
+        //SHIFT SIZE
+        /*
+        public enum CardSize {card,logo};
+
+        private CardSize _ButtonType;
+
+        public CardSize ButtonType
+        {
+            get { return _ButtonType; }
+            set
+            {
+                _ButtonType = value;
+               
+
+            }
+        }
+        */
     }
 }

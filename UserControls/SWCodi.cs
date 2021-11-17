@@ -53,10 +53,7 @@ namespace SC_CustomControls
 
 
         }
-        private void txtIntro_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ConsultaBBDDD();
-        }
+
         private void ConsultaBBDDD()
         {
 
@@ -67,7 +64,18 @@ namespace SC_CustomControls
             txtIntro.Text = "";
             e.Cancel = true;
         }
-        
+        ////
+        /// MACROS
+        ///
+        private void SWCodi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void txtIntro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ConsultaBBDDD();
+        }
+
         /// <summary>
         ///  Control property
         /// </summary>
@@ -119,9 +127,6 @@ namespace SC_CustomControls
             get { return _ClaseCS; }
             set { _ClaseCS = value; }
         }
-
-
-
         private string _ControlID;
 
         public string controlID
@@ -130,6 +135,6 @@ namespace SC_CustomControls
             set { _ControlID = value; }
         }
 
-
+ 
     }
 }

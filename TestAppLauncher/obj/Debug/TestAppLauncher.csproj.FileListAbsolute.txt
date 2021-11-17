@@ -11,4 +11,3 @@ C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\obj\Debug\TestAppLauncher.pdb
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\UserControls.dll
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\UserControls.pdb
-C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\connSql.dll

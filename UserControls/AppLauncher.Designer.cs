@@ -38,18 +38,24 @@ namespace SC_CustomControls
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(124, 14);
+            this.lblTitle.Location = new System.Drawing.Point(121, 12);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(35, 13);
             this.lblTitle.TabIndex = 1;
@@ -57,8 +63,11 @@ namespace SC_CustomControls
             // 
             // lblDesc
             // 
+            this.lblDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(124, 65);
+            this.lblDesc.Location = new System.Drawing.Point(121, 35);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(35, 13);
             this.lblDesc.TabIndex = 2;
@@ -72,8 +81,10 @@ namespace SC_CustomControls
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(50, 50);
             this.Name = "AppLauncher";
-            this.Size = new System.Drawing.Size(246, 95);
+            this.Size = new System.Drawing.Size(200, 100);
+            this.SizeChanged += new System.EventHandler(this.AppLauncher_SizeChanged);
             this.Click += new System.EventHandler(this.AppLauncher_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

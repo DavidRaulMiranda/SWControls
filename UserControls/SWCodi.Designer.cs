@@ -59,6 +59,7 @@ namespace SC_CustomControls
             this.Controls.Add(this.txtIntro);
             this.Name = "SWCodi";
             this.Size = new System.Drawing.Size(504, 29);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SWCodi_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

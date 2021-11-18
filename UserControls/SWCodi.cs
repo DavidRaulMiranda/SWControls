@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using connSql;
+//add referer
+
 
 namespace SC_CustomControls
 {
@@ -16,6 +19,80 @@ namespace SC_CustomControls
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// metodes
+        /// </summary>
+        /// 
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ValidaCodi(CancelEventArgs e)
+        {
+
+            //consulta bbdd
+            connSql.SQLConnect sql = new connSql.SQLConnect();
+            DataSet dts = new DataSet();
+            string f = String.Format("select {0},{1},{2} from {3} where {3}.{1}='{4}';", _NomId,_Nomcodi, _NomDesc ,_NomTaula, txtIntro.Text);
+            //string f = String.Format("select idAgency,CodeAgency,DescAgency from Agencies where Agencies.CodeAgency='40A'");
+            dts = sql.PortarPerConsulta(f);
+            //select idAgency,CodeAgency,DescAgency from Agencies where Agencies.CodeAgency='40A';
+            if (dts.Tables[0].Rows.Count == 1)
+            {
+                txtData.Text = dts.Tables[0].Rows[0][_NomDesc].ToString();
+                // valor de id a tbx externa
+
+
+                Form frmt = (Form)this.Parent;
+                foreach (Control item in frmt.Controls)
+                {
+                    if (item.Name.Equals(this.controlID))
+                    {
+                        item.Text = dts.Tables[0].Rows[0][_NomId].ToString(); ;
+                    }
+                }
+                //
+                txtIntro.BackColor = Color.White;
+            }
+            else
+            {
+                txtData.Text = "Unknown data";
+                incorrecData(e);
+            }
+            
+
+
+            //getforeig
+            //getforeigndata
+
+
+            }
+        /// <summary>
+        /// rep el nom d’un formulari i una classe i l’obre per reflection en mode modal.
+        ///Aquest formulari mostrarà la taula associada a la FK i permetrà escollir un sol registre i portar
+        ///les dades al custom control
+        /// </summary>
+        private void ObreCS()
+        {
+            //obre form pasa dades obte string
+
+
+            txtIntro.Text = "bbdd_result";
+            //exit(valida_codi)
+
+        }
+        private void incorrecData(CancelEventArgs e)
+        {
+            txtIntro.BackColor = Color.Red;
+            txtIntro.Text = "";
+            e.Cancel = true;
+        }
+        /// <summary>
+        /// events
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
@@ -46,7 +123,8 @@ namespace SC_CustomControls
             }
             else
             {
-                ConsultaBBDDD();
+                ValidaCodi(e);
+
             }
 
 
@@ -54,16 +132,7 @@ namespace SC_CustomControls
 
         }
 
-        private void ConsultaBBDDD()
-        {
-
-        }
-        private void incorrecData(CancelEventArgs e)
-        {
-            txtIntro.BackColor = Color.Red;
-            txtIntro.Text = "";
-            e.Cancel = true;
-        }
+ 
         ////
         /// MACROS
         ///
@@ -73,7 +142,7 @@ namespace SC_CustomControls
         }
         private void txtIntro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ConsultaBBDDD();
+            
         }
 
         /// <summary>

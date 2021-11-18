@@ -23,9 +23,9 @@ namespace SC_CustomControls
      
             
             InitializeComponent();
-            this.Height = this.Width / 3;
-            pictureBox1.Width = this.Width / 2;
-            pictureBox1.Height = this.Height - 4;
+            
+            pnlPicture.Width = this.Width/2;
+            pnlText.Width= this.Width /2;
 
 
         }
@@ -68,8 +68,43 @@ namespace SC_CustomControls
             tipus = ensamblat.GetType(appClass + "." + appForm);
 
             dllBD = Activator.CreateInstance(tipus);
+
+            //old((Form)dllBD).Show();
+            /*
+            Form form = ((Form)dllBD);
+            form.MdiParent = this.Parent;
+            form.MdiParent = _ParentForm;*/
+
+            //v3
+            Form form = ((Form)dllBD);
+            // form.TopLevel = false;    //<----- = para meter
+            /*
+            form.AutoScroll = true;
+            Panel childPanel = this.Controls[_PosPanel];
+            this.childPanel.Controls.Add(form);
+            form.Show();
+            */
+
+            // pasar pane2 como string y buscarlo en el padre
+            
+            Form frmt = (Form)this.FindForm();
+            foreach (Control item in frmt.Controls)
+            {
+                if (item.Name.Equals(this._PosPanel))
+                {
+                    form.AutoScroll = true;
+                    form.TopLevel = false;    //<----- = para meter en contenedor
+                    item.Controls.Add(form);
+                    form.Show();
+
+                }
+            }
+            
             //frmchild.MDIParent=this;
-            ((Form)dllBD).Show();
+
+
+
+
         }
 
         private string _Form;
@@ -121,6 +156,17 @@ namespace SC_CustomControls
             }
         }
 
+
+
+        private string _PosPanel;
+
+        public string PosPanel
+        {
+            get { return _PosPanel; }
+            set { _PosPanel = value; }
+        }
+
+
         private string _ImagePath;
         public string ImagePath
         {
@@ -153,16 +199,23 @@ namespace SC_CustomControls
 
         private void AppLauncher_SizeChanged(object sender, EventArgs e)
         {
-
-            lblDesc.Text = this.Width.ToString();
-            if (this.Width > 100)
+            
+            if (this.Width < 100)
+            {
+               pnlText.Width = this.Width - this.MinimumSize.Width;
+                //pnlText.Hide();
+            }
+            else
             {
                 this.Height = this.Width / 3;
-                pictureBox1.Width = this.Width / 2;
-                pictureBox1.Height = this.Height - 4;
+                pnlText.Width = this.Width / 2;
+                pnlPicture.Width= this.Width / 2;
+
+                lblDesc.Text = this.Width.ToString();
+
             }
 
-            
+
         }
         
 

@@ -42,15 +42,17 @@ namespace SC_CustomControls
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 103);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblTitle
             // 
@@ -77,10 +79,12 @@ namespace SC_CustomControls
             this.pnlText.BackColor = System.Drawing.Color.MediumAquamarine;
             this.pnlText.Controls.Add(this.lblTitle);
             this.pnlText.Controls.Add(this.lblDesc);
-            this.pnlText.Location = new System.Drawing.Point(154, 0);
+            this.pnlText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlText.Location = new System.Drawing.Point(100, 0);
             this.pnlText.Name = "pnlText";
-            this.pnlText.Size = new System.Drawing.Size(59, 80);
+            this.pnlText.Size = new System.Drawing.Size(113, 103);
             this.pnlText.TabIndex = 3;
+            this.pnlText.Click += new System.EventHandler(this.pnlText_Click);
             // 
             // pnlPicture
             // 
@@ -91,14 +95,15 @@ namespace SC_CustomControls
             this.pnlPicture.Name = "pnlPicture";
             this.pnlPicture.Size = new System.Drawing.Size(100, 103);
             this.pnlPicture.TabIndex = 4;
+            this.pnlPicture.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlPicture_MouseClick);
             // 
             // AppLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.Controls.Add(this.pnlPicture);
             this.Controls.Add(this.pnlText);
+            this.Controls.Add(this.pnlPicture);
             this.MinimumSize = new System.Drawing.Size(50, 50);
             this.Name = "AppLauncher";
             this.Size = new System.Drawing.Size(213, 103);

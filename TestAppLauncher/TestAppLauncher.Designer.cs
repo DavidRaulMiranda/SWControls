@@ -80,7 +80,7 @@ namespace TestAppLauncher
             this.swCodi1.ClaseCS = null;
             this.swCodi1.controlID = "txta";
             this.swCodi1.FormCS = null;
-            this.swCodi1.Location = new System.Drawing.Point(12, 303);
+            this.swCodi1.Location = new System.Drawing.Point(12, 283);
             this.swCodi1.Name = "swCodi1";
             this.swCodi1.Nomcodi = "CodeAgency";
             this.swCodi1.NomDesc = "DescAgency";
@@ -101,6 +101,7 @@ namespace TestAppLauncher
             this.appLauncher1.Location = new System.Drawing.Point(57, 30);
             this.appLauncher1.MinimumSize = new System.Drawing.Size(50, 50);
             this.appLauncher1.Name = "appLauncher1";
+            this.appLauncher1.PosPanel = null;
             this.appLauncher1.Size = new System.Drawing.Size(141, 50);
             this.appLauncher1.TabIndex = 0;
             this.appLauncher1.title = null;

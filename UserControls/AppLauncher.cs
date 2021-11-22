@@ -39,18 +39,22 @@ namespace SC_CustomControls
         private void AppLauncher_Click(object sender, EventArgs e)
         {
 
-            ///if app not open then launch
-
-
-            //this.BackColor = Color.Goldenrod;
-            //debe ser un dll => que sea biblio de calses
-
-                StartApp(_Clase, _Form);
+            StartApp(_Clase, _Form);
             
-
- 
         }
-        
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            StartApp(_Clase, _Form);
+
+        }
+        private void pnlText_Click(object sender, EventArgs e)
+        {
+            StartApp(_Clase, _Form);
+        }
+        private void pnlPicture_MouseClick(object sender, MouseEventArgs e)
+        {
+            StartApp(_Clase, _Form);
+        }
 
         /// <summary>
         ///  this function is tirggered  if the response from sql is valid and tries to open the form
@@ -217,7 +221,8 @@ namespace SC_CustomControls
 
 
         }
-        
+
+
 
         ///ADDONS:
         //parent to launch

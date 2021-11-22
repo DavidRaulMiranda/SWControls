@@ -15,15 +15,24 @@ namespace SC_CustomControls
 {
     public partial class SWCodi : UserControl
     {
+        private bool unknownData;
         public SWCodi()
         {
             InitializeComponent();
+            unknownData = false;
         }
         /// <summary>
         /// metodes
         /// </summary>
         /// 
-
+        private void txtIntro_Enter(object sender, EventArgs e)
+        {
+            if (!unknownData)
+            {
+                txtIntro.BackColor = SystemColors.Info;
+            }
+            
+        }
 
         /// <summary>
         /// 
@@ -53,21 +62,17 @@ namespace SC_CustomControls
                     }
                 }
                 //
+                //UpdateKey(dts);
+                unknownData = false;
                 txtIntro.BackColor = Color.White;
             }
             else
             {
                 txtData.Text = "Unknown data";
                 incorrecData(e);
+                unknownData = true;
             }
-            
-
-
-            //getforeig
-            //getforeigndata
-
-
-            }
+        }
         /// <summary>
         /// rep el nom d’un formulari i una classe i l’obre per reflection en mode modal.
         ///Aquest formulari mostrarà la taula associada a la FK i permetrà escollir un sol registre i portar
@@ -82,30 +87,14 @@ namespace SC_CustomControls
             //exit(valida_codi)
 
         }
+     
         private void incorrecData(CancelEventArgs e)
         {
             txtIntro.BackColor = Color.Red;
             txtIntro.Text = "";
             e.Cancel = true;
         }
-        /// <summary>
-        /// events
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
 
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            Form frmt = (Form)this.Parent;
-            foreach (Control item in frmt.Controls)
-            {
-                if (item.Name.Equals(this.controlID))
-                {
-                    item.Text = txtIntro.Text;
-                }
-            }
-        }
-        
         private void textBox1_Validating(object sender, CancelEventArgs e)
         {
 
@@ -136,15 +125,13 @@ namespace SC_CustomControls
         ////
         /// MACROS
         ///
-        private void SWCodi_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtIntro_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.F12)
+            {
+                ObreCS();
+            }
         }
-        private void txtIntro_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
         /// <summary>
         ///  Control property
         /// </summary>
@@ -204,6 +191,6 @@ namespace SC_CustomControls
             set { _ControlID = value; }
         }
 
- 
+
     }
 }

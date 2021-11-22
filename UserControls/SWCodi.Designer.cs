@@ -39,8 +39,8 @@ namespace SC_CustomControls
             this.txtIntro.Name = "txtIntro";
             this.txtIntro.Size = new System.Drawing.Size(55, 20);
             this.txtIntro.TabIndex = 0;
-            this.txtIntro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIntro_KeyPress);
-            this.txtIntro.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.txtIntro.Enter += new System.EventHandler(this.txtIntro_Enter);
+            this.txtIntro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIntro_KeyDown);
             this.txtIntro.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // txtData
@@ -59,7 +59,6 @@ namespace SC_CustomControls
             this.Controls.Add(this.txtIntro);
             this.Name = "SWCodi";
             this.Size = new System.Drawing.Size(504, 29);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SWCodi_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

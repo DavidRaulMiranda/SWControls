@@ -34,6 +34,10 @@
     <Reference Include="connSql">
       <HintPath>..\..\..\..\Downloads\connSql.dll</HintPath>
     </Reference>
+    <Reference Include="GetForeig, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GetForeig.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />

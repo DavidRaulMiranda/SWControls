@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using connSql;
+using GetForeig;
 //add referer
 
 
@@ -21,21 +23,31 @@ namespace SC_CustomControls
             InitializeComponent();
             unknownData = false;
         }
+        
         /// <summary>
-        /// metodes
+        /// EVENT ONCE GAINED FOCUS
         /// </summary>
-        /// 
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtIntro_Enter(object sender, EventArgs e)
         {
             if (!unknownData)
             {
                 txtIntro.BackColor = SystemColors.Info;
             }
-            
+        }
+        /// <summary>
+        /// EVENT TO LEAVE txtintro
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtIntro_Leave(object sender, EventArgs e)
+        {
+            unknownData = false;
         }
 
         /// <summary>
-        /// 
+        /// E
         /// </summary>
         private void ValidaCodi(CancelEventArgs e)
         {
@@ -58,7 +70,7 @@ namespace SC_CustomControls
                 {
                     if (item.Name.Equals(this.controlID))
                     {
-                        item.Text = dts.Tables[0].Rows[0][_NomId].ToString(); ;
+                        item.Text = dts.Tables[0].Rows[0][_NomId].ToString();
                     }
                 }
                 //
@@ -69,26 +81,58 @@ namespace SC_CustomControls
             else
             {
                 txtData.Text = "Unknown data";
-                incorrecData(e);
+                IncorrecData(e);
                 unknownData = true;
             }
         }
         /// <summary>
-        /// rep el nom d’un formulari i una classe i l’obre per reflection en mode modal.
-        ///Aquest formulari mostrarà la taula associada a la FK i permetrà escollir un sol registre i portar
-        ///les dades al custom control
+        /// OPENS A NEW FORM WITH THE FOREIGN KEY
         /// </summary>
         private void ObreCS()
         {
-            //obre form pasa dades obte string
+            /*
+            Assembly ensamblat = Assembly.LoadFrom(@"GetForeig.dll");//@"CustomControls.dll"
+
+            Object dllBD;
+
+            Type tipus;
+
+            tipus = ensamblat.GetType("GetForeig.GetData");
+
+            dllBD = Activator.CreateInstance(tipus);
+
+            //v3
+            Form form = ((Form)dllBD);
+            form.Show();
 
 
-            txtIntro.Text = "bbdd_result";
-            //exit(valida_codi)
+            */
+
+            connSql.SQLConnect sql = new connSql.SQLConnect();
+            GetForeig.GetData r = new GetForeig.GetData(_NomTaula,ref sql );
+            r.ShowDialog();
+
+            DataRow dtr = r.GetRow;
+            if (dtr!=null)
+            {
+                txtIntro.Text = dtr[_Nomcodi].ToString();
+                txtData.Text = dtr[_NomDesc].ToString();
+                //surt del dialeg
+
+                //update intelid?
+
+                //validacodi?
+                //txtIntro.Focus();
+                //txtIntro_Leave();
+                //textBox1_Validating(null, EventArgs.Empty;
+
+
+            }
 
         }
+
      
-        private void incorrecData(CancelEventArgs e)
+        private void IncorrecData(CancelEventArgs e)
         {
             txtIntro.BackColor = Color.Red;
             txtIntro.Text = "";
@@ -102,7 +146,7 @@ namespace SC_CustomControls
             {
                 if(_Requerit == true)
                 {
-                    incorrecData(e);
+                    IncorrecData(e);
                 }
                 else
                 {
@@ -121,10 +165,15 @@ namespace SC_CustomControls
 
         }
 
+
  
-        ////
-        /// MACROS
-        ///
+
+
+        /// <summary>
+        ///  EVENT IF THE  KEY F12 IS PRESSED
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtIntro_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F12)
@@ -132,9 +181,14 @@ namespace SC_CustomControls
                 ObreCS();
             }
         }
-        /// <summary>
-        ///  Control property
-        /// </summary>
+
+
+        ///
+        ///Properties   
+        ///
+
+
+     
         private bool _Requerit;
 
         public bool Requerit

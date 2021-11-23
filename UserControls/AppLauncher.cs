@@ -99,8 +99,27 @@ namespace SC_CustomControls
                     form.AutoScroll = true;
                     form.TopLevel = false;    //<----- = para meter en contenedor
                     item.Controls.Add(form);
+                    // form.Anchor = AnchorStyles.Bottom | AnchorStyles.Right| AnchorStyles.Left| AnchorStyles.Right;//nope
+                    form.Dock = DockStyle.Fill;
                     form.Show();
 
+                    /*
+                    //Declarem un array d’objectes I l’omplim amb
+
+                    //els nostres paràmetres
+
+                    Object[] args = {this.Name, OriginalForm.Name, query };
+
+                    // Passem aquests paràmetres al mètode CreateInstance a
+                    més
+
+                    // del tipus de l’ensamblat
+
+                    Object dllBD = Activator.CreateInstance(tipus, args);
+
+
+
+                    */
                 }
             }
             
@@ -200,6 +219,17 @@ namespace SC_CustomControls
 
             }
         }
+        /// <summary>
+        /// //////////////////////////////////////////////////////////////////////////////addddddddd pasar taula a form
+        /// </summary>
+        private string _NomTaula;
+
+        public string __NomTaula
+        {
+            get { return _NomTaula; }
+            set { _NomTaula = value; }
+        }
+
 
         private void AppLauncher_SizeChanged(object sender, EventArgs e)
         {
@@ -218,8 +248,6 @@ namespace SC_CustomControls
                 lblDesc.Text = this.Width.ToString();
 
             }
-
-
         }
 
 

@@ -41,6 +41,7 @@ namespace SC_CustomControls
             this.txtIntro.TabIndex = 0;
             this.txtIntro.Enter += new System.EventHandler(this.txtIntro_Enter);
             this.txtIntro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIntro_KeyDown);
+            this.txtIntro.Leave += new System.EventHandler(this.txtIntro_Leave);
             this.txtIntro.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // txtData

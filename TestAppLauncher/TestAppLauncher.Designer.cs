@@ -33,9 +33,12 @@ namespace TestAppLauncher
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.txta = new System.Windows.Forms.TextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.swTextbox2 = new SC_CustomControls.SWTextbox();
+            this.swTextbox1 = new SC_CustomControls.SWTextbox();
             this.swCodi1 = new SC_CustomControls.SWCodi();
             this.appLauncher1 = new SC_CustomControls.AppLauncher();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+
             this.SuspendLayout();
             // 
             // button1
@@ -75,6 +78,37 @@ namespace TestAppLauncher
             this.txta.Size = new System.Drawing.Size(100, 20);
             this.txta.TabIndex = 5;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(1282, 606);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 6;
+            // 
+            // swTextbox2
+            // 
+            this.swTextbox2.AllowEmpty = false;
+            this.swTextbox2.CampBBDD = null;
+            this.swTextbox2.ControlAssociat = null;
+            this.swTextbox2.IsForeignKey = false;
+            this.swTextbox2.Location = new System.Drawing.Point(175, 159);
+            this.swTextbox2.Name = "swTextbox2";
+            this.swTextbox2.Size = new System.Drawing.Size(100, 20);
+            this.swTextbox2.TabIndex = 8;
+            this.swTextbox2.TipoDato = SC_CustomControls.SWTextbox.tbxCont.text;
+            // 
+            // swTextbox1
+            // 
+            this.swTextbox1.AllowEmpty = false;
+            this.swTextbox1.CampBBDD = null;
+            this.swTextbox1.ControlAssociat = null;
+            this.swTextbox1.IsForeignKey = false;
+            this.swTextbox1.Location = new System.Drawing.Point(329, 147);
+            this.swTextbox1.Name = "swTextbox1";
+            this.swTextbox1.Size = new System.Drawing.Size(100, 20);
+            this.swTextbox1.TabIndex = 7;
+            this.swTextbox1.TipoDato = SC_CustomControls.SWTextbox.tbxCont.text;
+            // 
             // swCodi1
             // 
             this.swCodi1.ClaseCS = null;
@@ -93,6 +127,7 @@ namespace TestAppLauncher
             // appLauncher1
             // 
             this.appLauncher1.BackColor = System.Drawing.Color.Yellow;
+            this.appLauncher1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.appLauncher1.ButtonColor = System.Drawing.Color.Empty;
             this.appLauncher1.Clase = "HelloWorldForm";
             this.appLauncher1.Description = null;
@@ -101,24 +136,23 @@ namespace TestAppLauncher
             this.appLauncher1.Location = new System.Drawing.Point(57, 30);
             this.appLauncher1.MinimumSize = new System.Drawing.Size(50, 50);
             this.appLauncher1.Name = "appLauncher1";
+            this.appLauncher1.NomTaula = null;
             this.appLauncher1.PosPanel = null;
             this.appLauncher1.Size = new System.Drawing.Size(141, 50);
             this.appLauncher1.TabIndex = 0;
             this.appLauncher1.title = null;
             this.appLauncher1.Load += new System.EventHandler(this.appLauncher1_Load);
             // 
-            // maskedTextBox1
+            // agenciesDataSet1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(1282, 606);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 6;
             // 
             // TestAppLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.swTextbox2);
+            this.Controls.Add(this.swTextbox1);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.txta);
             this.Controls.Add(this.swCodi1);
@@ -128,6 +162,7 @@ namespace TestAppLauncher
             this.Controls.Add(this.appLauncher1);
             this.Name = "TestAppLauncher";
             this.Text = "Form1";
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +175,9 @@ namespace TestAppLauncher
         private SC_CustomControls.SWCodi swCodi1;
         private System.Windows.Forms.TextBox txta;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private SC_CustomControls.SWTextbox swTextbox1;
+        private SC_CustomControls.SWTextbox swTextbox2;
+      
 
         #endregion
 

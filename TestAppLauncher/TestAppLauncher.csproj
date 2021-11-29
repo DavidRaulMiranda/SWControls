@@ -96,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SWControls\SWControls.csproj">
+      <Project>{14f7f2f2-5de0-423a-bb82-873360abb714}</Project>
+      <Name>SWControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UserControls\UserControls.csproj">
       <Project>{1ba301df-4cac-498a-a4e0-4a9039a68c83}</Project>
       <Name>UserControls</Name>

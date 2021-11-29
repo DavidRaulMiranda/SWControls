@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
-using connSql;
+
 
 
 namespace SC_CustomControls
@@ -23,13 +23,15 @@ namespace SC_CustomControls
      
             
             InitializeComponent();
+
             
             pnlPicture.Width = this.Width/2;
             pnlText.Width= this.Width /2;
 
 
         }
-        
+      
+
         //
         /// <summary>
         /// IF icon is clicked request names from sql if valid trigger option.
@@ -70,9 +72,9 @@ namespace SC_CustomControls
             Type tipus;
 
             tipus = ensamblat.GetType(appClass + "." + appForm);
-
-            dllBD = Activator.CreateInstance(tipus);
-
+            Object[] args = { _NomTaula };
+            dllBD = Activator.CreateInstance(tipus,args);
+            
             //old((Form)dllBD).Show();
             /*
             Form form = ((Form)dllBD);
@@ -99,27 +101,11 @@ namespace SC_CustomControls
                     form.AutoScroll = true;
                     form.TopLevel = false;    //<----- = para meter en contenedor
                     item.Controls.Add(form);
+
+
                     // form.Anchor = AnchorStyles.Bottom | AnchorStyles.Right| AnchorStyles.Left| AnchorStyles.Right;//nope
                     form.Dock = DockStyle.Fill;
                     form.Show();
-
-                    /*
-                    //Declarem un array d’objectes I l’omplim amb
-
-                    //els nostres paràmetres
-
-                    Object[] args = {this.Name, OriginalForm.Name, query };
-
-                    // Passem aquests paràmetres al mètode CreateInstance a
-                    més
-
-                    // del tipus de l’ensamblat
-
-                    Object dllBD = Activator.CreateInstance(tipus, args);
-
-
-
-                    */
                 }
             }
             
@@ -224,7 +210,7 @@ namespace SC_CustomControls
         /// </summary>
         private string _NomTaula;
 
-        public string __NomTaula
+        public string NomTaula
         {
             get { return _NomTaula; }
             set { _NomTaula = value; }

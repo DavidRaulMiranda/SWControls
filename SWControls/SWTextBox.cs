@@ -39,13 +39,13 @@ namespace SC_CustomControls
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void SWTextbox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
+            {
             Regex rgx;
 
             //check if empty
             if (this.Text.Equals(string.Empty))
             {
-                if (_AlowEmpty == false)
+                if (_AllowEmpty == false)
                 {
                     e.Cancel = true; //inverted
                 }
@@ -57,11 +57,12 @@ namespace SC_CustomControls
                 switch (this.TipoDato)
                 {
                     case tbxCont.text:
-
-                        e.Cancel = true;
-
+                        rgx = new Regex(@"^[A-Za-z0-9!""#€$%&'()*+,./:;<=>?@\^_`{|}~-]+$");
+                        if (!rgx.IsMatch(this.Text))
+                        {
+                            e.Cancel = true;
+                        }
                         break;
-
                     case tbxCont.codi:
                         rgx = new Regex("^[A-Z]{4}-[0-9]{3}/[1,3,5,7,9]{1}[AEIOU]{1}$");
                         if (!rgx.IsMatch(this.Text))
@@ -127,12 +128,12 @@ namespace SC_CustomControls
             set { _TipoDato = value; }
         }
 
-        private bool _AlowEmpty;
+        private bool _AllowEmpty;
 
-        public bool AlowEmpty
+        public bool AllowEmpty
         {
-            get { return _AlowEmpty; }
-            set { _AlowEmpty = value; }
+            get { return _AllowEmpty; }
+            set { _AllowEmpty = value; }
         }
 
         private bool _IsForeignKey;

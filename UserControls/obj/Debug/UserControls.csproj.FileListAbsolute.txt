@@ -1,6 +1,5 @@
 C:\Users\pirio\source\repos\SWControls\UserControls\bin\Debug\UserControls.dll
 C:\Users\pirio\source\repos\SWControls\UserControls\bin\Debug\UserControls.pdb
-C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\UserControls.csprojAssemblyReference.cache
 C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\SC_CustomControls.AppLauncher.resources
 C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\SC_CustomControls.SWCodi.resources
 C:\Users\pirio\source\repos\SWControls\UserControls\obj\Debug\UserControls.csproj.GenerateResource.cache

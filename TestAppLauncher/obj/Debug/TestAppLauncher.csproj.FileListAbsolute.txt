@@ -13,3 +13,5 @@ C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\UserControls.dl
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\UserControls.pdb
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\connSql.dll
 C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\GetForeig.dll
+C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\SWControls.dll
+C:\Users\pirio\source\repos\SWControls\TestAppLauncher\bin\Debug\SWControls.pdb
